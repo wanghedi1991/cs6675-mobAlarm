@@ -119,9 +119,9 @@ def handle_location(request, username, latitude, longitude):
                 print(l.name, l.latitude, l.longitude)
         innerbox, results= computeInnterBox(nearbyLocations, user.last_grid_id, lat, lng)
         print(results)
-        stauts = dict(type = 'resylt_set', box = innerbox, numberOfResult = len(results), results = results)
+        status = dict(type = 'resylt_set', box = innerbox, numberOfResult = len(results), results = results)
 
-        return JsonResponse(innerbox , safe =False)
+        return JsonResponse(status , safe =False)
 
 
 def process_data(request, password,category):
