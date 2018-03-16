@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'MobAlarm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'CS6675',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
-        'PORT': '8889',
+        'NAME': 'sql9226910',
+        'USER': 'sql9226910',
+        'PASSWORD': 'knduvm5epy',
+        'HOST': '52.5.226.201',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
