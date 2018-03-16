@@ -21,7 +21,7 @@ please see google drive 6675document.docx
 1. Support more categories
 2. User authentitcation
 3. Client IOS app that support:
-   (1) User Register and Login
+   (1) User safe register/login
    (2) Add/Delete Event
    (3) Location Notification
 
