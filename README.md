@@ -14,7 +14,7 @@
 ## Client-Server Interaction:
 please see google drive 6675document.docx
 
-## Now suppoort category:
+## Now support category:
 [atm, suppermarket, postoffice, shoppingmall, gasstation]
 
 
