@@ -10,25 +10,32 @@ from django.http import JsonResponse
 from appserver.models import User, Location
 
 import requests
-#AIzaSyDlkmBMSsJUym5t-HlCj3SsBiHr3TWdPhI
+
+#alternative google api keys: AIzaSyDlkmBMSsJUym5t-HlCj3SsBiHr3TWdPhI
 
 google_place_api = 'AIzaSyBuDt53ewEt-mkV8AV5tJrjnd5-Se1DoEk'
 place_search_api_prefix = 'https://maps.googleapis.com/maps/api/place/radarsearch/json?location=33.775622,-84.398473&radius=5000&type='
 place_detail_api_prefix = 'https://maps.googleapis.com/maps/api/place/details/json?placeid='
 
+#atlanta boundary
 range_dict = dict(top = 33.875448, bottom = 33.575448, left = -84.563182, right = -84.263182)
 
+#divide atlanta into an 66 * 66 grid system
 num_of_col = 66
 num_of_row = 66
 
+#current support categories
 category_list= ['supermarket', 'gasstation', 'postoffice', 'atm', 'shoppingmall']
 
 
-
+#neighbor grids in grid system
 dx = [1, 0, -1]
 dy = [1, 0, -1]
 
+
 def user_register(request, username):
+
+        #response with fail message if username exist
         try:
                 user = User.objects.get(username = username)
         except User.DoesNotExist:
@@ -38,6 +45,7 @@ def user_register(request, username):
                 status = dict(type = 'post_response', status = 'fail', reason = 'username has already been used')
                 return JsonResponse(status, safe = False)
 
+        #register username
         new_user = User(username = username)
         new_user.save()
 
@@ -45,8 +53,9 @@ def user_register(request, username):
         return JsonResponse(status, safe =False)
 
 def user_login(request, username):
-        user = verifyUser(username)
 
+        user = verifyUser(username)
+        #reponse with fail message if username does not exist
         if user is None:
                 status = dict(type = 'post_response', status = 'fail', reason = 'user does not exist')
                 return JsonResponse(status, safe = False)
@@ -57,15 +66,16 @@ def user_login(request, username):
 
 def add_event(request, username, category):
         user = verifyUser(username)
-
+        #reponse with fail message if username does not exist
         if user is None:
                 status = dict(type = 'post_response', status = 'fail', reason = 'user does not exist')
                 return JsonResponse(status, safe = False)
 
+        #reponse with fail message if category is not supported
         if category not in category_list:
                 status = dict(type = 'post_response', status = 'fail', reason = 'wrong category')
                 return JsonResponse(status, safe = False)
-
+        #register user with the category
         user.__dict__[category] = True
         user.save()
         status = dict(type = 'post_response', status = 'succeed', reason = 'event is added successfully')
@@ -74,15 +84,15 @@ def add_event(request, username, category):
 
 def delete_event(request, username, category):
         user = verifyUser(username)
-
+        #reponse with fail message if username does not exist
         if user is None:
                 status = dict(type = 'post_response', status = 'fail', reason = 'user does not exist')
                 return JsonResponse(status, safe = False)
-
+        #reponse with fail message if categories does not exist
         if category not in category_list:
                 status = dict(type = 'post_response', status = 'fail', reason = 'wrong category')
                 return JsonResponse(status, safe = False)
-
+        #unregister user with the category
         user.__dict__[category] = False
         user.save()
 	status = dict(type = 'post_response', status = 'succeed', reason = 'event is deleted successfully')
@@ -91,7 +101,8 @@ def delete_event(request, username, category):
 
 def handle_location(request, username, latitude, longitude):
         user = verifyUser(username)
-        print(latitude, longitude)
+       
+        #reponse with fail message if username does not exist
         if user is None:
                 status = dict(type = 'post_response', status = 'fail', reason = 'user does not exist')
                 return JsonResponse(status, safe = False)
@@ -99,31 +110,37 @@ def handle_location(request, username, latitude, longitude):
         lng = float(longitude)
         lat = float(latitude)
 
+        #reponse with fail message if user is not in supporte area
         if lng < range_dict['left'] or lng > range_dict['right'] or lat < range_dict['bottom'] or lat > range_dict['top']:
                 status = dict(type = 'post_response', status = 'fail', reason = 'user out of range')
                 return JsonResponse(status, safe = False)
 
+        #update user's current grid_id
         user.last_grid_id = computeGridId(latitude, longitude)
         user.save()
 
         userEvents = []
 
+        #get all register event of the user
         for category in category_list:
                 if user.__dict__[category] is True:
                         userEvents.append(category)
 
-
+        #compute nearby grids
         nearbyGridIds = computeNearbyGridId(latitude, longitude)
-        nearbyLocations = getLocationsInGrids(nearbyGridIds, userEvents)
-        for l in nearbyLocations:
-                print(l.name, l.latitude, l.longitude)
-        innerbox, results= computeInnterBox(nearbyLocations, user.last_grid_id, lat, lng)
-        print(results)
-        status = dict(type = 'resylt_set', box = innerbox, numberOfResult = len(results), results = results)
 
+        #compute locations in nearby grids
+        nearbyLocations = getLocationsInGrids(nearbyGridIds, userEvents)
+        
+        #compute the request-free inner box for the user, and a set of notifiable results
+        innerbox, results= computeInnterBox(nearbyLocations, user.last_grid_id, lat, lng)
+
+        # reponse with results and the innerbox
+        status = dict(type = 'result_set', box = innerbox, numberOfResult = len(results), results = results)
         return JsonResponse(status , safe =False)
 
-
+#admin method for grabbing location data from GOOGLE API, and put locationw with grid_id into online database 
+#!!!!!!!!!!!!DO NOT run this function, or database may get in trouble!!!!!!!!!!!
 def process_data(request, password,category):
 	if password == 'meow':
                 url = place_search_api_prefix + category + '&key=' + google_place_api
@@ -158,6 +175,7 @@ def process_data(request, password,category):
         res_status = dict(status = 'success', numOfResult = len(results))
         return JsonResponse(res_status, safe =False)
 
+#given coordinates, compute the grid_id
 def computeGridId(lat, lng):
 	#the gird has 44 rows and 66 cols
 	row = int((range_dict['top'] - float(lat))*110000)//500
@@ -165,6 +183,8 @@ def computeGridId(lat, lng):
         print(row, col)
 	return row*num_of_col + col
 
+
+#given a grid_id, given all the neighbors' gird_id
 def computeNearbyGridId(lat, lng):
         grid_id = computeGridId(lat, lng)
 
@@ -183,7 +203,7 @@ def computeNearbyGridId(lat, lng):
         
         return result
                       
-
+#return satisfying locations
 def getLocationsInGrids(nearbyGridIds, userEvents):
         print(nearbyGridIds)
         print(userEvents)
@@ -191,10 +211,12 @@ def getLocationsInGrids(nearbyGridIds, userEvents):
         
         return locations
 
+#compute the innerbox
 def computeInnterBox(nearbyLocations, grid_id, user_lat, user_lng):
         row_id = grid_id//num_of_col
         col_id = grid_id%num_of_col
 
+        #the 3*3 gird neighborhood servers as a default box
         top = min(range_dict['top'] - ((row_id - 1) * 0.0045), range_dict['top'])
         bottom  = max(range_dict['top'] - ((row_id + 2) * 0.0045), range_dict['bottom'])
         left = max(range_dict['left'] + ((col_id - 1) * 0.0045), range_dict['left'])
@@ -202,12 +224,15 @@ def computeInnterBox(nearbyLocations, grid_id, user_lat, user_lng):
 
         results = []
 
+        #the innerbox shrinks as testing each candidate locations in the 3*3 neighborhood
         for location in nearbyLocations:
                 l = float(location.longitude) - 0.0005
                 r = float(location.longitude) + 0.0005
                 t = float(location.latitude) + 0.0005
                 b = float(location.latitude) - 0.0005
                 print(l, r, t, b, location.longitude, location.latitude)
+
+                #Locations in user's range will not be considered for computing the innerbox, they will be added to the result lists.
                 if user_lat < t and user_lat > b and user_lng < r and user_lng > l:
                         item = dict(name = location.name, category = location.category, latitude = location.latitude ,longitude = location.longitude, description = "Blank")
                         results.append(item)
@@ -229,7 +254,7 @@ def computeInnterBox(nearbyLocations, grid_id, user_lat, user_lng):
       
 
 
-    
+# the function is for user authentication
 def verifyUser(username):
         try:
                 user = User.objects.get(username = username)

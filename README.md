@@ -17,6 +17,14 @@ please see google drive 6675document.docx
 ## Now support category:
 [atm, suppermarket, postoffice, shoppingmall, gasstation]
 
+## To-Do Lists:
+1. Support more categories
+2. User authentitcation
+3. Client IOS app that support:
+   (1) User Register and Login
+   (2) Add/Delete Event
+   (3) Location Notification
+
 
 ## For windows:
 who knows...
