@@ -2,8 +2,8 @@
 
 ## Prerequisit:
 1. python 3.x
-2. django 1.11.11 or higher
-3. 
+2. django 1.11.11 or laters
+3. mysqlclient 1.3.7 or laters
 
 ## To Run on your mac
 1. pip install django
