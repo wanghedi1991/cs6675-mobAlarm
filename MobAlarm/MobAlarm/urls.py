@@ -17,8 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from appserver import views
 urlpatterns = [
-	url(r'^register/username=(?P<username>.*)',views.user_register, name = 'user_register'),
-    url(r'^login/username=(?P<username>.*)',views.user_login, name = 'user_login'),
+	url(r'^register/username=(?P<username>.*)&password=(?P<password>.*)',views.user_register, name = 'user_register'),
+    url(r'^login/username=(?P<username>.*)&password=(?P<password>.*)',views.user_login, name = 'user_login'),
 	url(r'^add/username=(?P<username>.*)&category=(?P<category>.*)', views.add_event, name = 'add_event'),
 	url(r'^delete/username=(?P<username>.*)&category=(?P<category>.*)', views.delete_event, name = 'delete_event'),
 	url(r'^location/username=(?P<username>.*)&latitude=(?P<latitude>[+-]?(\d*\.)?\d+)&longitude=(?P<longitude>[+-]?(\d*\.)?\d+)', views.handle_location, name = 'handle_location'),
