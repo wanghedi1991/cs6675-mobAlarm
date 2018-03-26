@@ -21,7 +21,8 @@ urlpatterns = [
     url(r'^login/username=(?P<username>.*)&password=(?P<password>.*)',views.user_login, name = 'user_login'),
 	url(r'^add/username=(?P<username>.*)&category=(?P<category>.*)', views.add_event, name = 'add_event'),
 	url(r'^delete/username=(?P<username>.*)&category=(?P<category>.*)', views.delete_event, name = 'delete_event'),
-	url(r'^location/username=(?P<username>.*)&latitude=(?P<latitude>[+-]?(\d*\.)?\d+)&longitude=(?P<longitude>[+-]?(\d*\.)?\d+)', views.handle_location, name = 'handle_location'),
+	url(r'^location/username=(?P<username>.*)&latitude=(?P<latitude>[+-]?(\d*\.)?\d+)&longitude=(?P<longitude>[+-]?(\d*\.)?\d+)', views.handle_location_without_angle, name = 'handle_location_without_angle'),
+    url(r'^location/username=(?P<username>.*)&latitude=(?P<latitude>[+-]?(\d*\.)?\d+)&longitude=(?P<longitude>[+-]?(\d*\.)?\d+)&angle=(?P<angle>[+-]?(\d*\.)?\d+)', views.handle_location_with_angle, name = 'handle_location_with_angle'),
 	url(r'^processdata/password=(?P<password>.*)/category=(?P<category>.*)', views.process_data, name = 'process_data'),
     url(r'^admin/', admin.site.urls),
 ]
