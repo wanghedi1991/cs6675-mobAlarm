@@ -8,8 +8,10 @@ from django.http import HttpResponse
 from django.http import Http404
 from django.http import JsonResponse
 from appserver.models import User, Location
-from gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict
+from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict
 import bz2
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User as U
 import base64
 
 import requests
@@ -44,12 +46,17 @@ def user_register(request, username, password):
     new_user = User(username=username, password=encrypted_password)
     new_user.save()
 
+    # register auth user
+    new_u = U(username=username, password=encrypted_password)
+    new_u.save()
+
     status = dict(type='post_response', status='succeed', reason='register succeeded')
     return JsonResponse(status, safe=False)
 
 
 def user_login(request, username, password):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
+    # print(u)
 
     input_password = str(bz2.compress(password.encode('utf-8')))
     # print(input_password)
@@ -65,12 +72,15 @@ def user_login(request, username, password):
         status = dict(type='post_response', status='fail', reason='wrong password')
         return JsonResponse(status, safe=False)
 
+    # login
+    login(request, u)
     status = dict(type='post_response', status='succeed', reason='user login succeeded')
     return JsonResponse(status, safe=False)
 
 
 def add_event(request, username, category):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
+
     # reponse with fail message if username does not exist
     if user is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
@@ -88,7 +98,8 @@ def add_event(request, username, category):
 
 
 def delete_event(request, username, category):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
+
     # reponse with fail message if username does not exist
     if user is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
@@ -107,7 +118,7 @@ def delete_event(request, username, category):
 
 
 def handle_location(request, username, latitude, longitude):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
 
     # reponse with fail message if username does not exist
     if user is None:
@@ -195,6 +206,8 @@ def process_data(request, password, category):
 def verifyUser(username):
     try:
         user = User.objects.get(username=username)
+        u = U.objects.get(username=username)
     except User.DoesNotExist:
         user = None
-    return user
+        u = None
+    return user, u
