@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from appserver.models import User, Location
+from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location
 
 
 google_place_api = 'AIzaSyBuDt53ewEt-mkV8AV5tJrjnd5-Se1DoEk'

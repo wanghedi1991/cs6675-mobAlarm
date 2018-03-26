@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from appserver.models import User, Location
 
 
-from appserver.datamanager import downloadDataFromGoogle
+from appserver.datamanager import downloadDataFromGoogle, category_list
 from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location
 
 import bz2
@@ -26,9 +26,9 @@ import requests
 def user_register(request, username, password):
     # response with fail message if username exist
     try:
-        user = User.objects.get(username=username)
+        user = U.objects.get(username=username)
         encrypted_password = None
-    except User.DoesNotExist:
+    except U.DoesNotExist:
         user = None
         encrypted_password = bz2.compress(password.encode('utf-8'))
 
@@ -36,13 +36,13 @@ def user_register(request, username, password):
         status = dict(type='post_response', status='fail', reason='username has already been used')
         return JsonResponse(status, safe=False)
 
-    # register username
-    new_user = User(username=username, password=encrypted_password)
-    new_user.save()
-
     # register auth user
     new_u = U(username=username, password=encrypted_password)
     new_u.save()
+
+    # add new user to User table
+    new_user = User(username=new_u.username)
+    new_user.save()
 
     status = dict(type='post_response', status='succeed', reason='register succeeded')
     return JsonResponse(status, safe=False)
@@ -56,12 +56,12 @@ def user_login(request, username, password):
     # print(input_password)
 
     # reponse with fail message if username does not exist
-    if user is None:
+    if u is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
         return JsonResponse(status, safe=False)
 
     # check password
-    if user is not None and input_password != user.password:
+    if u is not None and input_password != u.password:
         # print("wrong password")
         status = dict(type='post_response', status='fail', reason='wrong password')
         return JsonResponse(status, safe=False)
