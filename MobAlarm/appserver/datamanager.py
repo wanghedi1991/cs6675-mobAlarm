@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+import requests
 from django.db import models
 from appserver.models import User, Location
 
@@ -46,3 +46,4 @@ def downloadDataFromGoogle(password, category):
 
     res_status = dict(status='success', numOfResult=len(results))
     return res_status
+    

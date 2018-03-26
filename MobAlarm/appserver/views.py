@@ -9,12 +9,9 @@ from django.http import Http404
 from django.http import JsonResponse
 from appserver.models import User, Location
 from appserver.datamanager import downloadDataFromGoogle
-from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location
+from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location, category_list
 import bz2
 import base64
-
-import requests
-
 
 
 
