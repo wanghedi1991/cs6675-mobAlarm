@@ -38,6 +38,7 @@ def user_register(request, username, password):
     # response with fail message if username exist
     try:
         user = User.objects.get(username=username)
+        encrypted_password = None
     except User.DoesNotExist:
         user = None
         encrypted_password = bz2.compress(password.encode('utf-8'))
@@ -67,8 +68,8 @@ def user_login(request, username, password):
 
     # check password
     if user is not None and input_password != user.password:
-        # print("password not compare")
-        status = dict(type='post_response', status='fail', reason='password not compare')
+        # print("wrong password")
+        status = dict(type='post_response', status='fail', reason='wrong password')
         return JsonResponse(status, safe=False)
 
     status = dict(type='post_response', status='succeed', reason='user login succeeded')
