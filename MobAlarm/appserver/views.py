@@ -8,10 +8,16 @@ from django.http import HttpResponse
 from django.http import Http404
 from django.http import JsonResponse
 from appserver.models import User, Location
-from appserver.datamanager import downloadDataFromGoogle
-from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location, category_list
+
+
+
+from appserver.datamanager import downloadDataFromGoogle, category_list
+from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location
+
+
 import bz2
-import base64
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User as U
 
 
 
@@ -19,9 +25,9 @@ import base64
 def user_register(request, username, password):
     # response with fail message if username exist
     try:
-        user = User.objects.get(username=username)
+        user = U.objects.get(username=username)
         encrypted_password = None
-    except User.DoesNotExist:
+    except U.DoesNotExist:
         user = None
         encrypted_password = bz2.compress(password.encode('utf-8'))
 
@@ -29,8 +35,12 @@ def user_register(request, username, password):
         status = dict(type='post_response', status='fail', reason='username has already been used')
         return JsonResponse(status, safe=False)
 
-    # register username
-    new_user = User(username=username, password=encrypted_password)
+    # register auth user
+    new_u = U(username=username, password=encrypted_password)
+    new_u.save()
+
+    # add new user to User table
+    new_user = User(username=new_u.username)
     new_user.save()
 
     status = dict(type='post_response', status='succeed', reason='register succeeded')
@@ -38,28 +48,32 @@ def user_register(request, username, password):
 
 
 def user_login(request, username, password):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
+    # print(u)
 
     input_password = str(bz2.compress(password.encode('utf-8')))
     # print(input_password)
 
     # reponse with fail message if username does not exist
-    if user is None:
+    if u is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
         return JsonResponse(status, safe=False)
 
     # check password
-    if user is not None and input_password != user.password:
+    if u is not None and input_password != u.password:
         # print("wrong password")
         status = dict(type='post_response', status='fail', reason='wrong password')
         return JsonResponse(status, safe=False)
 
+    # login
+    login(request, u)
     status = dict(type='post_response', status='succeed', reason='user login succeeded')
     return JsonResponse(status, safe=False)
 
 
 def add_event(request, username, category):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
+
     # reponse with fail message if username does not exist
     if user is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
@@ -77,7 +91,8 @@ def add_event(request, username, category):
 
 
 def delete_event(request, username, category):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
+
     # reponse with fail message if username does not exist
     if user is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
@@ -96,16 +111,14 @@ def delete_event(request, username, category):
 
 
 
-
-
 def handle_location_with_angle(request, username, latitude, longitude, angle):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
     status = handle_location(user, latitude, longitude, angle)
 
     return JsonResponse(status, safe=False)
 
 def handle_location_without_angle(request, username, latitude, longitude):
-    user = verifyUser(username)
+    user, u = verifyUser(username)
     status = handle_location(user, latitude, longitude, angle = -1)
     return JsonResponse(status, safe=False)
 
@@ -125,6 +138,8 @@ def process_data(request, password, category):
 def verifyUser(username):
     try:
         user = User.objects.get(username=username)
+        u = U.objects.get(username=username)
     except User.DoesNotExist:
         user = None
-    return user
+        u = None
+    return user, u

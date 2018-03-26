@@ -171,7 +171,7 @@ def handle_location(user, latitude, longitude, angle = -1):
     if angle == -1:
         nearbyGridIds = computeNearbyGridId(latitude, longitude)
     else:
-        nearbyGridIds = computeNearbyGridIdwithDirection(latitute, longitude, angle)
+        nearbyGridIds = computeNearbyGridIdwithDirection(latitude, longitude, angle)
    
     # compute locations in nearby grids
     nearbyLocations = getLocationsInGrids(nearbyGridIds, userEvents)
