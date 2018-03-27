@@ -10,16 +10,15 @@ from django.http import JsonResponse
 from appserver.models import User, Location
 
 
+
 from appserver.datamanager import downloadDataFromGoogle, category_list
 from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location
+
 
 import bz2
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User as U
 from django.contrib.auth.decorators import login_required
-
-import requests
-
 
 
 

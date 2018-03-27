@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-
+import requests
 from django.db import models
 from appserver.models import User, Location
 from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocationsInGrids, computeInnterBox, range_dict, computeNearbyGridIdwithDirection, handle_location
@@ -47,3 +47,4 @@ def downloadDataFromGoogle(password, category):
 
     res_status = dict(status='success', numOfResult=len(results))
     return res_status
+    
