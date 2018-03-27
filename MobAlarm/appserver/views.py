@@ -150,7 +150,7 @@ def verifyUser(username):
     try:
         u = U.objects.get(username=username)
         user = User.objects.get(username=u)
-    except User.DoesNotExist:
-        user = None
+    except U.DoesNotExist:
         u = None
+        user = None
     return user, u
