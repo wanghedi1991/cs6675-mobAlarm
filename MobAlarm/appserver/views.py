@@ -16,6 +16,7 @@ from appserver.gridmanager import computeGridId, computeNearbyGridId, getLocatio
 import bz2
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User as U
+from django.contrib.auth.decorators import login_required
 
 import requests
 
@@ -55,6 +56,10 @@ def user_login(request, username, password):
     input_password = str(bz2.compress(password.encode('utf-8')))
     # print(input_password)
 
+
+    test = authenticate(username='ll')
+    print(test)
+
     # reponse with fail message if username does not exist
     if u is None:
         status = dict(type='post_response', status='fail', reason='user does not exist')
@@ -74,6 +79,9 @@ def user_login(request, username, password):
 
 def add_event(request, username, category):
     user, u = verifyUser(username)
+
+    # if not request.user.is_authenticated:
+    #     print("here")
 
     # reponse with fail message if username does not exist
     if user is None:
