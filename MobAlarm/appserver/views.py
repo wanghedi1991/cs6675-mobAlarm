@@ -44,6 +44,8 @@ def user_register(request, username, password):
     new_user = User(username=new_u.username)
     new_user.save()
 
+    # print(new_user.username)
+
     status = dict(type='post_response', status='succeed', reason='register succeeded')
     return JsonResponse(status, safe=False)
 
@@ -56,8 +58,8 @@ def user_login(request, username, password):
     # print(input_password)
 
 
-    test = authenticate(username='ll')
-    print(test)
+    # test = authenticate(username='ll')
+    # print(test)
 
     # reponse with fail message if username does not exist
     if u is None:
@@ -76,6 +78,7 @@ def user_login(request, username, password):
     return JsonResponse(status, safe=False)
 
 
+# @login_required(login_url='/login/')
 def add_event(request, username, category):
     user, u = verifyUser(username)
 
