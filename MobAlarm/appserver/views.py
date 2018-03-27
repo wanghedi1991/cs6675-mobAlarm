@@ -41,7 +41,7 @@ def user_register(request, username, password):
     new_u.save()
 
     # add new user to User table
-    new_user = User(username=new_u.username)
+    new_user = User(username=new_u)
     new_user.save()
 
     # print(new_user.username)
@@ -52,7 +52,7 @@ def user_register(request, username, password):
 
 def user_login(request, username, password):
     user, u = verifyUser(username)
-    # print(u)
+    print(user)
 
     input_password = str(bz2.compress(password.encode('utf-8')))
     # print(input_password)
@@ -148,8 +148,8 @@ def process_data(request, password, category):
 # the function is for user authentication
 def verifyUser(username):
     try:
-        user = User.objects.get(username=username)
         u = U.objects.get(username=username)
+        user = User.objects.get(username=u)
     except User.DoesNotExist:
         user = None
         u = None

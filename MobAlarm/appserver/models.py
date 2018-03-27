@@ -8,8 +8,8 @@ from django.conf import settings
 # Create your models here.
 
 class User(models.Model):
-	username = models.CharField(max_length = 100)
-	# username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	# username = models.CharField(max_length = 100)
+	username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	# password = models.TextField(null = True)
 	last_grid_id = models.IntegerField(default = -1)
 	supermarket = models.BooleanField(default = False)
