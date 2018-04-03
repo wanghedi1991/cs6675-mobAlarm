@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A94DAFFCD1B9C19AAE73E53 /* Pods_Location_NotifierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487DFEAF00118A281227552D /* Pods_Location_NotifierTests.framework */; };
+		9D0988CB20689807009CD237 /* TableHolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0988CA20689807009CD237 /* TableHolderController.swift */; };
+		9D0988CD2068985B009CD237 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0988CC2068985B009CD237 /* NotificationType.swift */; };
+		9D0988CF206899DA009CD237 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0988CE206899DA009CD237 /* Place.swift */; };
+		9D0988D120689D22009CD237 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0988D020689D22009CD237 /* Constant.swift */; };
+		9D0988D32068A95A009CD237 /* NotificationTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0988D22068A95A009CD237 /* NotificationTypeCell.swift */; };
+		9D57E3D820731429006E0A96 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D57E3D620731429006E0A96 /* user.png */; };
+		9D57E3D920731429006E0A96 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D57E3D720731429006E0A96 /* password.png */; };
+		9D57E3DB20731634006E0A96 /* titleBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D57E3DA20731634006E0A96 /* titleBig.png */; };
+		9D66548A2059C1F0000C7BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6654892059C1F0000C7BF1 /* AppDelegate.swift */; };
+		9D66548C2059C1F0000C7BF1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66548B2059C1F0000C7BF1 /* FirstViewController.swift */; };
+		9D66548E2059C1F0000C7BF1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66548D2059C1F0000C7BF1 /* SecondViewController.swift */; };
+		9D6654912059C1F0000C7BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D66548F2059C1F0000C7BF1 /* Main.storyboard */; };
+		9D6654932059C1F0000C7BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6654922059C1F0000C7BF1 /* Assets.xcassets */; };
+		9D6654962059C1F0000C7BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6654942059C1F0000C7BF1 /* LaunchScreen.storyboard */; };
+		9D6654A12059C1F1000C7BF1 /* Location_NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6654A02059C1F1000C7BF1 /* Location_NotifierTests.swift */; };
+		9D7C3C87207206D600D226B3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C3C86207206D600D226B3 /* RegisterViewController.swift */; };
+		9DA9DB36206C228300EA2E78 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9DB35206C228300EA2E78 /* FilterCell.swift */; };
+		9DDA85762067431600BB3283 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA85752067431600BB3283 /* LoginViewController.swift */; };
+		9DEA12BA2072AE6300EBD704 /* icon_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DEA12B92072AE6300EBD704 /* icon_2.jpg */; };
+		9DEA12BE2072AF7500EBD704 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DEA12BD2072AF7500EBD704 /* title.png */; };
+		9DEA12C22072B16300EBD704 /* title_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DEA12C12072B16300EBD704 /* title_small.png */; };
+		BDAD0050C3B663BD451CCEDF /* Pods_Location_Notifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86D824C6553B7672C1F7DDF /* Pods_Location_Notifier.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D66549D2059C1F1000C7BF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D66547E2059C1F0000C7BF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D6654852059C1F0000C7BF1;
+			remoteInfo = "Location Notifier";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		487DFEAF00118A281227552D /* Pods_Location_NotifierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location_NotifierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2766EBD1889934719B1208 /* Pods-Location Notifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location Notifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Location Notifier/Pods-Location Notifier.debug.xcconfig"; sourceTree = "<group>"; };
+		9D0988CA20689807009CD237 /* TableHolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHolderController.swift; sourceTree = "<group>"; };
+		9D0988CC2068985B009CD237 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		9D0988CE206899DA009CD237 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		9D0988D020689D22009CD237 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		9D0988D22068A95A009CD237 /* NotificationTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypeCell.swift; sourceTree = "<group>"; };
+		9D57E3D620731429006E0A96 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		9D57E3D720731429006E0A96 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		9D57E3DA20731634006E0A96 /* titleBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titleBig.png; path = ../../../Desktop/titleBig.png; sourceTree = "<group>"; };
+		9D6654862059C1F0000C7BF1 /* Location Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6654892059C1F0000C7BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D66548B2059C1F0000C7BF1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9D66548D2059C1F0000C7BF1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		9D6654902059C1F0000C7BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D6654922059C1F0000C7BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D6654952059C1F0000C7BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D6654972059C1F0000C7BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D66549C2059C1F1000C7BF1 /* Location NotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Location NotifierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6654A02059C1F1000C7BF1 /* Location_NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location_NotifierTests.swift; sourceTree = "<group>"; };
+		9D6654A22059C1F1000C7BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7C3C86207206D600D226B3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9DA9DB35206C228300EA2E78 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		9DDA85752067431600BB3283 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9DEA12B92072AE6300EBD704 /* icon_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_2.jpg; sourceTree = "<group>"; };
+		9DEA12BD2072AF7500EBD704 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title.png; path = ../../../Desktop/title.png; sourceTree = "<group>"; };
+		9DEA12C12072B16300EBD704 /* title_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title_small.png; path = ../../../Desktop/title_small.png; sourceTree = "<group>"; };
+		A86D824C6553B7672C1F7DDF /* Pods_Location_Notifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location_Notifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8670634193F1326E4473CDF /* Pods-Location NotifierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location NotifierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Location NotifierTests/Pods-Location NotifierTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D7CC7B8DE0C154AF62C8EB9B /* Pods-Location Notifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location Notifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-Location Notifier/Pods-Location Notifier.release.xcconfig"; sourceTree = "<group>"; };
+		DC48E203194033FFC8AC1D74 /* Pods-Location NotifierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Location NotifierTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Location NotifierTests/Pods-Location NotifierTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D6654832059C1F0000C7BF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDAD0050C3B663BD451CCEDF /* Pods_Location_Notifier.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D6654992059C1F1000C7BF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A94DAFFCD1B9C19AAE73E53 /* Pods_Location_NotifierTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3304AE4E1913DF17448A1F33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A86D824C6553B7672C1F7DDF /* Pods_Location_Notifier.framework */,
+				487DFEAF00118A281227552D /* Pods_Location_NotifierTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D66547D2059C1F0000C7BF1 = {
+			isa = PBXGroup;
+			children = (
+				9D6654882059C1F0000C7BF1 /* Location Notifier */,
+				9D66549F2059C1F1000C7BF1 /* Location NotifierTests */,
+				9D6654872059C1F0000C7BF1 /* Products */,
+				D6B4AD73A8A642CA7B5BF105 /* Pods */,
+				3304AE4E1913DF17448A1F33 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9D6654872059C1F0000C7BF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D6654862059C1F0000C7BF1 /* Location Notifier.app */,
+				9D66549C2059C1F1000C7BF1 /* Location NotifierTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D6654882059C1F0000C7BF1 /* Location Notifier */ = {
+			isa = PBXGroup;
+			children = (
+				9D6654892059C1F0000C7BF1 /* AppDelegate.swift */,
+				9D6654922059C1F0000C7BF1 /* Assets.xcassets */,
+				9D0988D020689D22009CD237 /* Constant.swift */,
+				9DA9DB35206C228300EA2E78 /* FilterCell.swift */,
+				9D66548B2059C1F0000C7BF1 /* FirstViewController.swift */,
+				9D57E3D720731429006E0A96 /* password.png */,
+				9D57E3DA20731634006E0A96 /* titleBig.png */,
+				9D57E3D620731429006E0A96 /* user.png */,
+				9DEA12B92072AE6300EBD704 /* icon_2.jpg */,
+				9D6654972059C1F0000C7BF1 /* Info.plist */,
+				9D6654942059C1F0000C7BF1 /* LaunchScreen.storyboard */,
+				9DDA85752067431600BB3283 /* LoginViewController.swift */,
+				9D66548F2059C1F0000C7BF1 /* Main.storyboard */,
+				9D0988CC2068985B009CD237 /* NotificationType.swift */,
+				9D0988D22068A95A009CD237 /* NotificationTypeCell.swift */,
+				9D0988CE206899DA009CD237 /* Place.swift */,
+				9D7C3C86207206D600D226B3 /* RegisterViewController.swift */,
+				9D66548D2059C1F0000C7BF1 /* SecondViewController.swift */,
+				9D0988CA20689807009CD237 /* TableHolderController.swift */,
+				9DEA12C12072B16300EBD704 /* title_small.png */,
+				9DEA12BD2072AF7500EBD704 /* title.png */,
+			);
+			path = "Location Notifier";
+			sourceTree = "<group>";
+		};
+		9D66549F2059C1F1000C7BF1 /* Location NotifierTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D6654A02059C1F1000C7BF1 /* Location_NotifierTests.swift */,
+				9D6654A22059C1F1000C7BF1 /* Info.plist */,
+			);
+			path = "Location NotifierTests";
+			sourceTree = "<group>";
+		};
+		D6B4AD73A8A642CA7B5BF105 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C2766EBD1889934719B1208 /* Pods-Location Notifier.debug.xcconfig */,
+				D7CC7B8DE0C154AF62C8EB9B /* Pods-Location Notifier.release.xcconfig */,
+				B8670634193F1326E4473CDF /* Pods-Location NotifierTests.debug.xcconfig */,
+				DC48E203194033FFC8AC1D74 /* Pods-Location NotifierTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D6654852059C1F0000C7BF1 /* Location Notifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D6654A52059C1F1000C7BF1 /* Build configuration list for PBXNativeTarget "Location Notifier" */;
+			buildPhases = (
+				4F5E0E6827F1BC77CCE0BF98 /* [CP] Check Pods Manifest.lock */,
+				9D6654822059C1F0000C7BF1 /* Sources */,
+				9D6654832059C1F0000C7BF1 /* Frameworks */,
+				9D6654842059C1F0000C7BF1 /* Resources */,
+				16A1FA25D95A2E286752DFB6 /* [CP] Embed Pods Frameworks */,
+				3CA581783E15F50F690D7E12 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Location Notifier";
+			productName = "Location Notifier";
+			productReference = 9D6654862059C1F0000C7BF1 /* Location Notifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D66549B2059C1F1000C7BF1 /* Location NotifierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D6654A82059C1F1000C7BF1 /* Build configuration list for PBXNativeTarget "Location NotifierTests" */;
+			buildPhases = (
+				5FFEFC415D7207242AB4AD59 /* [CP] Check Pods Manifest.lock */,
+				9D6654982059C1F1000C7BF1 /* Sources */,
+				9D6654992059C1F1000C7BF1 /* Frameworks */,
+				9D66549A2059C1F1000C7BF1 /* Resources */,
+				3756EEB088D35098D4127684 /* [CP] Embed Pods Frameworks */,
+				971FD2D6259315C0F08B2790 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D66549E2059C1F1000C7BF1 /* PBXTargetDependency */,
+			);
+			name = "Location NotifierTests";
+			productName = "Location NotifierTests";
+			productReference = 9D66549C2059C1F1000C7BF1 /* Location NotifierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D66547E2059C1F0000C7BF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Hedi Wang";
+				TargetAttributes = {
+					9D6654852059C1F0000C7BF1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					9D66549B2059C1F1000C7BF1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D6654852059C1F0000C7BF1;
+					};
+				};
+			};
+			buildConfigurationList = 9D6654812059C1F0000C7BF1 /* Build configuration list for PBXProject "Location Notifier" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D66547D2059C1F0000C7BF1;
+			productRefGroup = 9D6654872059C1F0000C7BF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D6654852059C1F0000C7BF1 /* Location Notifier */,
+				9D66549B2059C1F1000C7BF1 /* Location NotifierTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D6654842059C1F0000C7BF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D57E3D920731429006E0A96 /* password.png in Resources */,
+				9D6654962059C1F0000C7BF1 /* LaunchScreen.storyboard in Resources */,
+				9D6654932059C1F0000C7BF1 /* Assets.xcassets in Resources */,
+				9D57E3D820731429006E0A96 /* user.png in Resources */,
+				9D6654912059C1F0000C7BF1 /* Main.storyboard in Resources */,
+				9DEA12BA2072AE6300EBD704 /* icon_2.jpg in Resources */,
+				9DEA12C22072B16300EBD704 /* title_small.png in Resources */,
+				9DEA12BE2072AF7500EBD704 /* title.png in Resources */,
+				9D57E3DB20731634006E0A96 /* titleBig.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D66549A2059C1F1000C7BF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16A1FA25D95A2E286752DFB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Location Notifier/Pods-Location Notifier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3756EEB088D35098D4127684 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Location NotifierTests/Pods-Location NotifierTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CA581783E15F50F690D7E12 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Location Notifier/Pods-Location Notifier-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Location Notifier/Pods-Location Notifier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F5E0E6827F1BC77CCE0BF98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Location Notifier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FFEFC415D7207242AB4AD59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Location NotifierTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		971FD2D6259315C0F08B2790 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Location NotifierTests/Pods-Location NotifierTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D6654822059C1F0000C7BF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DDA85762067431600BB3283 /* LoginViewController.swift in Sources */,
+				9D7C3C87207206D600D226B3 /* RegisterViewController.swift in Sources */,
+				9D66548E2059C1F0000C7BF1 /* SecondViewController.swift in Sources */,
+				9D0988CF206899DA009CD237 /* Place.swift in Sources */,
+				9D0988D120689D22009CD237 /* Constant.swift in Sources */,
+				9D66548A2059C1F0000C7BF1 /* AppDelegate.swift in Sources */,
+				9D66548C2059C1F0000C7BF1 /* FirstViewController.swift in Sources */,
+				9D0988CD2068985B009CD237 /* NotificationType.swift in Sources */,
+				9D0988D32068A95A009CD237 /* NotificationTypeCell.swift in Sources */,
+				9D0988CB20689807009CD237 /* TableHolderController.swift in Sources */,
+				9DA9DB36206C228300EA2E78 /* FilterCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D6654982059C1F1000C7BF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D6654A12059C1F1000C7BF1 /* Location_NotifierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D66549E2059C1F1000C7BF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D6654852059C1F0000C7BF1 /* Location Notifier */;
+			targetProxy = 9D66549D2059C1F1000C7BF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D66548F2059C1F0000C7BF1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D6654902059C1F0000C7BF1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D6654942059C1F0000C7BF1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D6654952059C1F0000C7BF1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D6654A32059C1F1000C7BF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9D6654A42059C1F1000C7BF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D6654A62059C1F1000C7BF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C2766EBD1889934719B1208 /* Pods-Location Notifier.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V64FM48BJ6;
+				INFOPLIST_FILE = "Location Notifier/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GoergiaTech.Location-Notifier";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D6654A72059C1F1000C7BF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7CC7B8DE0C154AF62C8EB9B /* Pods-Location Notifier.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V64FM48BJ6;
+				INFOPLIST_FILE = "Location Notifier/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GoergiaTech.Location-Notifier";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9D6654A92059C1F1000C7BF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8670634193F1326E4473CDF /* Pods-Location NotifierTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Location NotifierTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GoergiaTech.Location-NotifierTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Location Notifier.app/Location Notifier";
+			};
+			name = Debug;
+		};
+		9D6654AA2059C1F1000C7BF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC48E203194033FFC8AC1D74 /* Pods-Location NotifierTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Location NotifierTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "GoergiaTech.Location-NotifierTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Location Notifier.app/Location Notifier";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D6654812059C1F0000C7BF1 /* Build configuration list for PBXProject "Location Notifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6654A32059C1F1000C7BF1 /* Debug */,
+				9D6654A42059C1F1000C7BF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D6654A52059C1F1000C7BF1 /* Build configuration list for PBXNativeTarget "Location Notifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6654A62059C1F1000C7BF1 /* Debug */,
+				9D6654A72059C1F1000C7BF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D6654A82059C1F1000C7BF1 /* Build configuration list for PBXNativeTarget "Location NotifierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6654A92059C1F1000C7BF1 /* Debug */,
+				9D6654AA2059C1F1000C7BF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D66547E2059C1F0000C7BF1 /* Project object */;
+}

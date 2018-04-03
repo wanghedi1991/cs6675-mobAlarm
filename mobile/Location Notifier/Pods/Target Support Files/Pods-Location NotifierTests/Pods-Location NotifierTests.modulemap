@@ -1,0 +1,6 @@
+framework module Pods_Location_NotifierTests {
+  umbrella header "Pods-Location NotifierTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
